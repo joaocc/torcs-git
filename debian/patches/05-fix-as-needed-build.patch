@@ -1,0 +1,18 @@
+Description: fix build with ld --as-needed
+ libraceengine.so to link against the needed racescreens and robottools
+ in order to later link torcs-bin with ld --as-needed
+Author: Julian Taylor <jtaylor.debian@googlemail.com>
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/torcs/+bug/829694
+--- src/libs/raceengineclient/Makefile	2008-12-15 00:35:28.000000000 +0100
++++ src/libs/raceengineclient/Makefile	2011-08-21 14:06:13.289971960 +0200
+@@ -23,6 +23,10 @@
+ SOURCES      = singleplayer.cpp raceinit.cpp racemain.cpp racemanmenu.cpp racestate.cpp racegl.cpp \
+ 	       raceengine.cpp raceresults.cpp
+ 
++LIBSPATH     = -L${EXPORTBASE}
++
++LIBS         = -lracescreens -lrobottools
++
+ EXPDIR       = include
+ 
+ EXPORTS      = singleplayer.h raceinit.h

@@ -1,0 +1,204 @@
+torcs (1.3.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed patches accepted and merged by upstream:
+    - debian/patches/03
+    - debian/patches/04
+    - debian/patches/07
+  * Added libvorbis dependency to build-deps
+  * Removed dependency on menu. (Closes: #647380)
+
+ -- Rudy Godoy <rudy@stone-head.org>  Fri, 03 Feb 2012 18:14:21 -0500
+
+torcs (1.3.1-6.2) unstable; urgency=low
+
+  * Non-maintainer upload. (version 1.3.1-6.1 triggered a problem with dak)
+  * 06-add-format-argument.patch: add format argument to
+    avoid format-security error while building. (Closes: #646469)
+  * 07-update-to-libpng15.patch: libpng transition. Thanks to Nobuhiro Iwamatsu!
+    (Closes: #636009)
+
+ -- Mònica Ramírez Arceda <monica@probeta.net>  Sun, 04 Dec 2011 11:34:02 +0100
+
+torcs (1.3.1-6) unstable; urgency=low
+
+  * Fixed .desktop file to be valid. Thanks Pino Toscano. Closes: #638957
+  * Added patch to fix FTBS caused by libraceengine.so being underlinked. 
+    Thanks Julian Taylor. Closes: #638719
+
+ -- Rudy Godoy <rudy@debian.org>  Tue, 30 Aug 2011 19:56:17 -0500
+
+torcs (1.3.1-5) unstable; urgency=low
+
+  * Fixed insecure library loading (LD_LIBRARY_PATH) (CVE-2010-3384) Closes: #598306.
+
+ -- Rudy Godoy <rudy@debian.org>  Sat, 09 Oct 2010 17:56:12 -0500
+
+torcs (1.3.1-4) unstable; urgency=low
+
+  * Removed '3DGraphics' category from .desktop. Thanks Andrew Higginson.
+    (Closes: #588215) (LP: #532066)
+  * Bumped debian/watch version to 3 and fixed URI issue.
+
+ -- Rudy Godoy <rudy@debian.org>  Sun, 22 Aug 2010 13:27:28 -0500
+
+torcs (1.3.1-3) unstable; urgency=low
+
+  * Fixed missing documentation install in debian/rules (Closes: #577354)
+  * Removed xrandr exclusion on configure and automake1.9 dependency 
+    from debian/control (Closes: #552593)
+  * Fixed long URLs in manpage and updated author email address.
+
+ -- Rudy Godoy <rudy@debian.org>  Sat, 08 May 2010 21:48:56 -0500
+
+torcs (1.3.1-2) unstable; urgency=low
+
+  * Add dependency on libtool (Closes: #529023)
+  * Updated link for tutorial on manpage (Closes: #465459)
+
+ -- Rudy Godoy <rudy@debian.org>  Sun, 14 Jun 2009 22:13:04 -0500
+
+torcs (1.3.1-1) unstable; urgency=low
+
+  * Now Torcs ships more drivers-robots (Closes: #440167)
+  * New upstream release (Closes: #509324)
+  * Reworked copyright information. Added license text.
+  * Updated watch file to properly support SF's download urls
+  * Removed dependency on xlibmesa-gl
+  * Removed versioned Build-Depends on plib1.8.4-dev (Closes: #516923)
+
+ -- Rudy Godoy <rudy@debian.org>  Sun, 01 Mar 2009 03:58:39 -0500
+
+torcs (1.3.0-3) unstable; urgency=low
+
+  * Removed new.h include on simuv2 SOLID 2.0 source for GCC 4.3
+    compliance. (Closes: #461946)
+  * Reencoded Debian's copyright file to UTF8, making lintian happy
+
+ -- Rudy Godoy <rudy@debian.org>  Sun, 03 Feb 2008 16:08:12 -0500
+
+torcs (1.3.0-2) unstable; urgency=low
+
+  * Reworked dependencies, now using libgl1-mesa-dev. mesa GLX libs are not
+    actually used.
+  * Not running autoconf and automake before compiling, this causes configure
+    to ran again and loses arguments.
+  * Exclude xrandr from configure to workaround OpenAL bug when it can't open
+    a sound device (Closes: #445806)
+  * Removed Application category and FilePattern to match FreeDesktop specs from .desktop entry.
+  * Upgraded to debian policy 3.7.3, no changes need
+
+ -- Rudy Godoy <rudy@debian.org>  Sun, 23 Dec 2007 17:03:28 -0500
+
+torcs (1.3.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #393439)
+  * Bumped standards version, no changes needed
+  * Removed track_cpp and alut patches
+  * Worked out build scripts to fix FTBS when build twice in a row (Closes: #424215)
+
+ -- Rudy Godoy <rudy@debian.org>  Sun, 27 May 2007 22:30:21 -0500
+
+torcs (1.2.4-3) unstable; urgency=low
+
+  * Applied patch for XML entity. Thanks Emmet Hikory (Closes: #407890)
+  * Switched maintainer email address.
+  * Bumped Standards version, no changes needed.
+  * Backported patch from 1.3 to fix saving screenshots on 
+    $HOME/.torcs/screenshots/ directory. (Closes: #412347)
+
+ -- Rudy Godoy <rudy@debian.org>  Sun, 25 Mar 2007 23:25:05 -0500
+
+torcs (1.2.4-2) unstable; urgency=low
+
+  * Rebuild for C++ allocator change and merged patches from Ubuntu.
+  * Changed priority to optional
+  * Removed some Xlibs build dependencies to use only the required ones.
+  * Applied patch to fix FTBFS with GCC 4.1. Thanks tbm. (Closes: #356965)
+  * Added dependency to libalut-dev since it was splitted from libopenal. (Closes: #360193, #362804)
+  * Added patch to fix `find' call for lliaw/tracksdata with wrong parameters
+    order.
+  * Fixes in configure.in:
+    - Configure error: can't find libm. Added condition for LDFLAGS to check if
+      $x_libraries is defined. (Closes: #366935)
+    - Added check for libalut now that it has been splitted from openal,
+      so it gets on .depends for linking.
+  * Added back autoconf and automake to build depends for rebootstrapping on build time. 
+    This should be removed once upstream accepts the patches.
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Sun, 14 May 2006 14:19:15 -0500
+
+torcs (1.2.4-1) unstable; urgency=low
+
+  * New upstream release (Closes: #329463)
+  * C++ ABI transition
+  * New robots added, see README.Debian-source
+  * Removed patches from previous version, mostly merged with upstream
+  * Not boostraping autoconf on build time, removed autotools dependency
+  * Changed build dependencies from X.org xlibs to only the needed ones
+  * Added .desktop file
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Tue,  4 Oct 2005 15:37:49 -0500
+
+torcs (1.2.3-2) unstable; urgency=low
+
+  * Bumped revision to supersede experimental package.
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Mon, 23 May 2005 01:26:09 -0500
+
+torcs (1.2.3-1) unstable; urgency=low
+
+  * New upstream release (Closes: #304114)
+  * Switched to CDBS package build system.
+  * Patches applied using simple-patchsys:
+    Fixes in configure.in:
+      - Fixed hardcoded path for ccmalloc
+    Fixes in Makefile:
+      - Fixed torcs.rc location on build time to use $TORCS_BASE
+    - Fixed: FTBFS (amd64/gcc-4.0): cast from 'void*' to 'int' loses
+	   precision (Closes: #297974)
+  * Changed priority to extra to accomplish dependency policy.
+  * Added mention to hardware requirements on package' description.
+  * Changed build dependency on libpng3-dev to libpng12-dev to
+    anticipate post-sarge removal. (Closes: #303704)
+  * Fixed: Build depends on plib1.8.3-pic which isn't in unstable
+    anymore. Changed to plib1.8.4 (Closes: #310215)
+  * Fixed: Segmentation fault on selecting race. New torcs-data-*
+    packages now include full data files (Closes: #281901)
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Mon, 23 May 2005 00:13:31 -0500
+
+torcs (1.2.2-5) unstable; urgency=low
+
+  * Added architecture handling condition to makefile.in, thus it properly
+    handles ieee-fp on non-i386 archs
+  * Changed dependancy on plib-dev to plib-pic to properly handle non-PIC 
+    code, thanks Michel Dänzer <daenzer@debian.org>
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Sat, 29 May 2004 03:35:49 -0300
+
+torcs (1.2.2-4) unstable; urgency=low
+
+  * Changed logofile to Ticon.png
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Wed, 26 May 2004 01:24:09 -0300
+
+torcs (1.2.2-3) unstable; urgency=low
+
+  * Upated dependencies for: libpng and plib1.8.3
+  * Depends only on libfreeglu3
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Sun, 16 May 2004 13:51:59 -0500
+
+torcs (1.2.2-2) unstable; urgency=low
+
+  * Fixes on bad handling of torcs-data dependency.
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Mon,  5 Apr 2004 09:01:06 -0500
+
+torcs (1.2.2-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Thu, 26 Feb 2004 22:08:42 -0500
+

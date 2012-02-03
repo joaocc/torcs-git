@@ -1,0 +1,17 @@
+torcs (1.2.4-1) unstable; urgency=low
+
+  * New robots added to Debian source package, due changes in this version
+    - TORCS-1.2.4-src-robots-berniw.tgz
+    - TORCS-1.2.4-src-robots-bt.tgz
+    - TORCS-1.2.4-src-robots-olethros.tgz
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Tue, 27 Sep 2005 01:04:14 -0500
+
+torcs (1.2.2-1) unstable; urgency=low
+
+  * For creating this package, we need the following upstream source packages:
+    - TORCS-1.2.x-src.tgz
+    - TORCS-1.2.x-src-robots-base.tgz
+
+ -- Rudy Godoy <rudy@kernel-panik.org>  Thu, 28 Apr 2005 01:31:01 -0500
+
