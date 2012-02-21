@@ -4,7 +4,7 @@
 #    created              : Sat Mar 18 23:11:09 CET 2000
 #    copyright            : (C) 2000 by Eric Espie                         
 #    email                : torcs@free.fr   
-#    version              : $Id: Makefile,v 1.7.6.1 2008/09/03 21:51:49 berniw Exp $                                  
+#    version              : $Id: Makefile,v 1.7.6.2 2012/02/07 20:42:42 berniw Exp $                                  
 #
 ##############################################################################
 #
@@ -20,7 +20,7 @@ ROBOT = berniw
 
 SHIPDIR   = drivers/${ROBOT}/2
 
-SHIP      = cg-nascar-rwd.rgb $(shell find *.xml -maxdepth 0 -type f -print)
+SHIP      = car1-stock1.rgb $(shell find *.xml -maxdepth 0 -type f -print)
 
 src-robots-base_PKGFILES	= $(shell find * -maxdepth 0 -type f -print)
 

@@ -4,7 +4,7 @@
     created              : Mon Apr 17 13:51:00 CET 2000
     copyright            : (C) 2000-2002 by Bernhard Wymann
     email                : berniw@bluewin.ch
-    version              : $Id: berniw3.cpp,v 1.2.2.1 2008/05/29 22:54:57 berniw Exp $
+    version              : $Id: berniw3.cpp,v 1.2.2.3 2012/02/09 22:36:24 berniw Exp $
 
  ***************************************************************************/
 
@@ -19,6 +19,7 @@
 
 
 #include "berniw.h"
+#include <portability.h>
 
 #ifdef DMALLOC
 #include "dmalloc.h"
@@ -115,11 +116,11 @@ static void initTrack(int index, tTrack* track, void *carHandle, void **carParmH
 	char buffer[BUFSIZE];
 	char* trackname = strrchr(track->filename, '/') + 1;
 
-	sprintf(buffer, "drivers/berniw3/%d/%s", index, trackname);
+	snprintf(buffer, BUFSIZE, "drivers/berniw3/%d/%s", index, trackname);
     *carParmHandle = GfParmReadFile(buffer, GFPARM_RMODE_STD);
 
 	if (*carParmHandle == NULL) {
-		sprintf(buffer, "drivers/berniw3/%d/default.xml", index);
+		snprintf(buffer, BUFSIZE, "drivers/berniw3/%d/default.xml", index);
 	    *carParmHandle = GfParmReadFile(buffer, GFPARM_RMODE_STD);
 	}
 

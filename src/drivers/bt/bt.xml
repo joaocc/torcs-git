@@ -4,7 +4,7 @@
     created              : Wed Jan 8 18:31:16 CET 2003
     copyright            : (C) 2002 Bernhard Wymann
     email                : berniw@bluewin.ch
-    version              : $Id: bt.xml,v 1.2.2.1 2008/05/29 23:49:46 berniw Exp $
+    version              : $Id: bt.xml,v 1.2.2.2 2012/02/07 20:42:45 berniw Exp $
 -->
 
 <!--    This program is free software; you can redistribute it and/or modify  -->
@@ -23,7 +23,7 @@
         <attstr name="desc" val=""></attstr>
         <attstr name="team" val="berniw"></attstr>
         <attstr name="author" val="Bernhard Wymann"></attstr>
-        <attstr name="car name" val="cg-nascar-rwd"></attstr>
+        <attstr name="car name" val="car1-stock1"></attstr>
         <attnum name="race number" val="61"></attnum>
         <attnum name="red" val="1.0"></attnum>
         <attnum name="green" val="0.0"></attnum>
@@ -35,7 +35,7 @@
         <attstr name="desc" val=""></attstr>
         <attstr name="team" val="berniw"></attstr>
         <attstr name="author" val="Bernhard Wymann"></attstr>
-        <attstr name="car name" val="cg-nascar-rwd"></attstr>
+        <attstr name="car name" val="car1-stock1"></attstr>
         <attnum name="race number" val="62"></attnum>
         <attnum name="red" val="1.0"></attnum>
         <attnum name="green" val="0.0"></attnum>

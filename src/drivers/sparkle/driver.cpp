@@ -4,7 +4,7 @@
     created              : Thu Dec 20 01:21:49 CET 2002
     copyright            : (C) 2002 Bernhard Wymann
     email                : berniw@bluewin.ch
-    version              : $Id: driver.cpp,v 1.2.2.2 2008/12/31 03:53:54 berniw Exp $
+    version              : $Id: driver.cpp,v 1.2.2.3 2012/02/09 14:58:23 berniw Exp $
 
  ***************************************************************************/
 
@@ -65,19 +65,20 @@ void Driver::initTrack(tTrack* t, void *carHandle, void **carParmHandle, tSituat
 {
 	track = t;
 
-	char buffer[256];
+	const int BUFSIZE = 256;
+	char buffer[BUFSIZE];
 	/* get a pointer to the first char of the track filename */
 	char* trackname = strrchr(track->filename, '/') + 1;
 
 	switch (s->_raceType) {
 		case RM_TYPE_PRACTICE:
-			sprintf(buffer, "drivers/sparkle/%d/practice/%s", INDEX, trackname);
+			snprintf(buffer, BUFSIZE, "drivers/sparkle/%d/practice/%s", INDEX, trackname);
 			break;
 		case RM_TYPE_QUALIF:
-			sprintf(buffer, "drivers/sparkle/%d/qualifying/%s", INDEX, trackname);
+			snprintf(buffer, BUFSIZE, "drivers/sparkle/%d/qualifying/%s", INDEX, trackname);
 			break;
 		case RM_TYPE_RACE:
-			sprintf(buffer, "drivers/sparkle/%d/race/%s", INDEX, trackname);
+			snprintf(buffer, BUFSIZE, "drivers/sparkle/%d/race/%s", INDEX, trackname);
 			break;
 		default:
 			break;
@@ -85,7 +86,7 @@ void Driver::initTrack(tTrack* t, void *carHandle, void **carParmHandle, tSituat
 
 	*carParmHandle = GfParmReadFile(buffer, GFPARM_RMODE_STD);
 	if (*carParmHandle == NULL) {
-		sprintf(buffer, "drivers/sparkle/%d/default.xml", INDEX);
+		snprintf(buffer, BUFSIZE, "drivers/sparkle/%d/default.xml", INDEX);
 		*carParmHandle = GfParmReadFile(buffer, GFPARM_RMODE_STD);
     }
 
