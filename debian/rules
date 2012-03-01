@@ -1,8 +1,8 @@
 #!/usr/bin/make -f
 
-#DEB_AUTO_UPDATE_LIBTOOL := pre
-#DEB_AUTO_UPDATE_ACLOCAL := 1.11
-#DEB_AUTO_UPDATE_AUTOCONF := no
+DEB_AUTO_UPDATE_LIBTOOL := pre
+DEB_AUTO_UPDATE_ACLOCAL := 1.11
+DEB_AUTO_UPDATE_AUTOCONF := no
 
 # Documentation to install
 DEB_INSTALL_DOCS_ALL = debian/TODO.Debian
@@ -15,7 +15,7 @@ VERSION=$(shell dpkg-parsechangelog | grep Version | cut -d ' ' -f 2 | cut -d '-
 
 # rules for package building
 include /usr/share/cdbs/1/rules/debhelper.mk
-#include /usr/share/cdbs/1/class/autotools.mk
+include /usr/share/cdbs/1/class/autotools.mk
 
 DEB_CONFIGURE_EXTRA_FLAGS := --bindir=\$${prefix}/games --x-libraries=/usr/lib/
 
