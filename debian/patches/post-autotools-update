@@ -1,0 +1,406 @@
+Description: Files updated by autotools
+ Files updated by running autotools update.
+ .
+ torcs (1.3.2-1) unstable; urgency=low
+ .
+   * New upstream release
+   * Removed patches accepted and merged by upstream:
+     - debian/patches/03
+     - debian/patches/04
+     - debian/patches/07
+   * Added libvorbis dependency to build-deps
+   * Removed dependency on menu. (Closes: #647380)
+   * Switched to dpkg-source 3.0 (quilt) format
+Author: Rudy Godoy <rudy@stone-head.org>
+Bug-Debian: http://bugs.debian.org/647380
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- /dev/null
++++ torcs-1.3.2/stamp-h1
+@@ -0,0 +1 @@
++timestamp for config.h
+--- torcs-1.3.2.orig/Make-config
++++ torcs-1.3.2/Make-config
+@@ -6,7 +6,7 @@
+ #    created              : Mon Dec 11 23:47:37 CET 2000
+ #    copyright            : (C) 2000 by Eric Espi�                        
+ #    email                : Eric.Espie@torcs.org   
+-#    version              : $Id: Make-config,v 1.28.2.10 2012/01/03 12:38:15 berniw Exp $                                  
++#    version              : $Id: Make-config.in,v 1.17.2.1 2008/06/01 20:19:38 berniw Exp $                                  
+ #
+ ##############################################################################
+ #
+@@ -17,12 +17,12 @@
+ #
+ ##############################################################################
+ 
+-SHELL = /bin/sh
++SHELL = /bin/bash
+ 
+ srcdir = .
+ top_srcdir = ${TORCS_BASE}
+ 
+-prefix = /home/berni/torcs_bin
++prefix = /usr/local
+ exec_prefix = ${prefix}
+ 
+ bindir = ${exec_prefix}/bin
+@@ -49,8 +49,8 @@ INSTALL_SCRIPT = ${INSTALL}
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ CFLAGSD = -D_SVID_SOURCE -D_BSD_SOURCE -DSHM -DHAVE_CONFIG_H
+-CXXFLAGS =  -march=barcelona -O2 -fno-strict-aliasing -Wall -fPIC -fno-strict-aliasing -O2 -DUSE_RANDR_EXT -DGL_GLEXT_PROTOTYPES -Wall -fPIC -fno-strict-aliasing -O2 -DUSE_RANDR_EXT -DGL_GLEXT_PROTOTYPES -march=barcelona -O2 -fno-strict-aliasing ${CFLAGSD}
+-CFLAGS   =  -march=barcelona -O2 -fno-strict-aliasing -Wall -fPIC -fno-strict-aliasing -O2 -DUSE_RANDR_EXT -DGL_GLEXT_PROTOTYPES -Wall -fPIC -fno-strict-aliasing -O2 -DUSE_RANDR_EXT -DGL_GLEXT_PROTOTYPES ${CFLAGSD}
++CXXFLAGS =  -g -O2 -Wall -fPIC -fno-strict-aliasing -O2 -DUSE_RANDR_EXT -DGL_GLEXT_PROTOTYPES -Wall -fPIC -fno-strict-aliasing -O2 -DUSE_RANDR_EXT -DGL_GLEXT_PROTOTYPES  ${CFLAGSD}
++CFLAGS   =  -g -O2 -Wall -fPIC -fno-strict-aliasing -O2 -DUSE_RANDR_EXT -DGL_GLEXT_PROTOTYPES -Wall -fPIC -fno-strict-aliasing -O2 -DUSE_RANDR_EXT -DGL_GLEXT_PROTOTYPES ${CFLAGSD}
+ 
+ #EXT_LIBS = -lpthread -lplibjs -lplibssgaux -lplibssg -lplibsm -lplibsl -lplibsg -lplibul -lglut -lGLU -lGL -lpng -lz -ldl -lopenal -lXrandr -lXrender -lXxf86vm -lXmu -lXi -lXt -lSM -lICE -lXext -lX11 -lm 
+ EXT_LIBS = -lplibjs -lplibssgaux -lplibssg -lplibsm -lplibsl -lplibsg -lplibul -lglut -lGLU -lGL -lpng -lz -ldl -lopenal -lXrandr -lXrender -lXxf86vm -lXmu -lXi -lXt -lSM -lICE -lXext -lX11 -lm 
+@@ -60,10 +60,10 @@ LDFLAGS =  -L${EXPORTBASE}/lib  -lalut -
+ #INCFLAGS =  -I${EXPORTBASE}/include -I/usr/include -I/usr/local/include
+ INCFLAGS =  -I${EXPORTBASE}/include -I${TORCS_BASE}
+ 
+-CPP = gcc -E -march=barcelona -O2 -fno-strict-aliasing -M -D__DEPEND__
++CPP = gcc -E  -M -D__DEPEND__
+ 
+ PACKAGE = torcs
+-VERSION = 1.3.2-test2
++VERSION = 1.3.2
+ 
+ TAR = gtar
+ GZIP_ENV = --best
+--- torcs-1.3.2.orig/config.h
++++ torcs-1.3.2/config.h
+@@ -98,7 +98,7 @@
+ #define HAVE_STRING_H 1
+ 
+ /* Define to 1 if you have the `strndup' function. */
+-#undef HAVE_STRNDUP
++#define HAVE_STRNDUP 1
+ 
+ /* Define to 1 if you have the <sys/stat.h> header file. */
+ #define HAVE_SYS_STAT_H 1
+--- /dev/null
++++ torcs-1.3.2/src/tools/trackgen/trackgen
+@@ -0,0 +1,36 @@
++#! /bin/bash
++# src/tools/trackgen/trackgen.  Generated from trackgen.in by configure.
++
++##############################################################################
++#
++#    file        : trackgen.in
++#    created     : Tue Aug 19 23:23:51 CEST 2003
++#    copyright   : (C) 2003 by Eric Espi�                        
++#    email       : Eric.Espie@torcs.org   
++#    version     : $Id: trackgen.in,v 1.2.2.2 2011/12/29 10:18:20 berniw Exp $                                  
++#
++##############################################################################
++#
++#   This program is free software; you can redistribute it and/or modify
++#   it under the terms of the GNU General Public License as published by
++#   the Free Software Foundation; either version 2 of the License, or
++#   (at your option) any later version.
++#
++##############################################################################
++
++prefix=/usr/local
++exec_prefix=${prefix}
++
++BINDIR=${exec_prefix}/bin
++LIBDIR=${exec_prefix}/lib/torcs
++DATAROOTDIR=${prefix}/share
++DATADIR=$DATAROOTDIR/games/torcs
++VARDIR=${prefix}/var/games/torcs
++
++export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$LIBDIR/lib
++
++echo "Changing to $DATADIR"
++cd $DATADIR
++$LIBDIR/trackgen-bin -L $LIBDIR $*
++
++exit 0
+--- /dev/null
++++ torcs-1.3.2/src/tools/texmapper/texmapper
+@@ -0,0 +1,34 @@
++#! /bin/bash
++# src/tools/texmapper/texmapper.  Generated from texmapper.in by configure.
++
++##############################################################################
++#
++#    file        : texmapper.in
++#    created     : Tue Aug 19 23:23:51 CEST 2003
++#    copyright   : (C) 2003 by Eric Espi�                        
++#    email       : Eric.Espie@torcs.org   
++#    version     : $Id: texmapper.in,v 1.1.2.2 2011/12/29 10:18:20 berniw Exp $                                  
++#
++##############################################################################
++#
++#   This program is free software; you can redistribute it and/or modify
++#   it under the terms of the GNU General Public License as published by
++#   the Free Software Foundation; either version 2 of the License, or
++#   (at your option) any later version.
++#
++##############################################################################
++
++prefix=/usr/local
++exec_prefix=${prefix}
++
++BINDIR=${exec_prefix}/bin
++LIBDIR=${exec_prefix}/lib/torcs
++DATAROOTDIR=${prefix}/share
++DATADIR=$DATAROOTDIR/games/torcs
++VARDIR=${prefix}/var/games/torcs
++
++export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$LIBDIR/lib
++
++$LIBDIR/texmapper-bin $*
++
++exit 0
+--- /dev/null
++++ torcs-1.3.2/src/tools/nfs2ac/nfs2ac
+@@ -0,0 +1,34 @@
++#! /bin/bash
++# src/tools/nfs2ac/nfs2ac.  Generated from nfs2ac.in by configure.
++
++##############################################################################
++#
++#    file        : nfs2ac.in
++#    created     : Tue Aug 19 23:23:51 CEST 2003
++#    copyright   : (C) 2003 by Eric Espi�                        
++#    email       : Eric.Espie@torcs.org   
++#    version     : $Id: nfs2ac.in,v 1.1.2.2 2011/12/29 10:18:20 berniw Exp $                                  
++#
++##############################################################################
++#
++#   This program is free software; you can redistribute it and/or modify
++#   it under the terms of the GNU General Public License as published by
++#   the Free Software Foundation; either version 2 of the License, or
++#   (at your option) any later version.
++#
++##############################################################################
++
++prefix=/usr/local
++exec_prefix=${prefix}
++
++BINDIR=${exec_prefix}/bin
++LIBDIR=${exec_prefix}/lib/torcs
++DATAROOTDIR=${prefix}/share
++DATADIR=$DATAROOTDIR/games/torcs
++VARDIR=${prefix}/var/games/torcs
++
++export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$LIBDIR/lib
++
++$LIBDIR/nfs2ac-bin $*
++
++exit 0
+--- /dev/null
++++ torcs-1.3.2/src/tools/nfsperf/nfsperf
+@@ -0,0 +1,34 @@
++#! /bin/bash
++# src/tools/nfsperf/nfsperf.  Generated from nfsperf.in by configure.
++
++##############################################################################
++#
++#    file        : nfsperf.in
++#    created     : Tue Aug 19 23:23:51 CEST 2003
++#    copyright   : (C) 2003 by Eric Espi�                        
++#    email       : Eric.Espie@torcs.org   
++#    version     : $Id: nfsperf.in,v 1.1.2.2 2011/12/29 10:18:20 berniw Exp $                                  
++#
++##############################################################################
++#
++#   This program is free software; you can redistribute it and/or modify
++#   it under the terms of the GNU General Public License as published by
++#   the Free Software Foundation; either version 2 of the License, or
++#   (at your option) any later version.
++#
++##############################################################################
++
++prefix=/usr/local
++exec_prefix=${prefix}
++
++BINDIR=${exec_prefix}/bin
++LIBDIR=${exec_prefix}/lib/torcs
++DATAROOTDIR=${prefix}/share
++DATADIR=$DATAROOTDIR/games/torcs
++VARDIR=${prefix}/var/games/torcs
++
++export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$LIBDIR/lib
++
++$LIBDIR/nfsperf-bin $*
++
++exit 0
+--- /dev/null
++++ torcs-1.3.2/src/tools/accc/accc
+@@ -0,0 +1,36 @@
++#! /bin/bash
++# src/tools/accc/accc.  Generated from accc.in by configure.
++
++##############################################################################
++#
++#    file        : accc.in
++#    created     : Tue Aug 19 23:23:51 CEST 2003
++#    copyright   : (C) 2003 by Eric Espi�                        
++#    email       : Eric.Espie@torcs.org   
++#    version     : $Id: accc.in,v 1.2.2.2 2011/12/29 10:18:19 berniw Exp $                                  
++#
++##############################################################################
++#
++#   This program is free software; you can redistribute it and/or modify
++#   it under the terms of the GNU General Public License as published by
++#   the Free Software Foundation; either version 2 of the License, or
++#   (at your option) any later version.
++#
++##############################################################################
++
++prefix=/usr/local
++exec_prefix=${prefix}
++
++BINDIR=${exec_prefix}/bin
++LIBDIR=${exec_prefix}/lib/torcs
++DATAROOTDIR=${prefix}/share
++DATADIR=$DATAROOTDIR/games/torcs
++VARDIR=${prefix}/var/games/torcs
++
++export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$LIBDIR/lib
++
++$LIBDIR/accc-bin $*
++
++rm -f temp.objf
++
++exit 0
+--- torcs-1.3.2.orig/src/doc/torcsdoc.conf
++++ torcs-1.3.2/src/doc/torcsdoc.conf
+@@ -6,7 +6,7 @@
+ #    created              : Mon Jan 31 23:57:03 CET 2000
+ #    copyright            : (C) 2000,2002 by Eric Espie                         
+ #    email                : torcs@free.fr   
+-#    version              : $Id: torcsdoc.conf,v 1.130.2.5 2011/12/31 09:53:36 berniw Exp $                                  
++#    version              : $Id: torcsdoc.conf.in,v 1.6 2003/06/24 21:01:54 torcs Exp $                                  
+ #
+ ##############################################################################
+ #
+@@ -38,7 +38,7 @@ PROJECT_NAME         = torcs
+ # This could be handy for archiving the generated documentation or 
+ # if some version control system is used.
+ 
+-PROJECT_NUMBER       = 1.3.2-test2
++PROJECT_NUMBER       = 1.3.2
+ 
+ # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) 
+ # base path where the generated documentation will be put. 
+@@ -123,7 +123,7 @@ FULL_PATH_NAMES      = YES
+ # only done if one of the specified strings matches the left-hand part of
+ # the path.
+ 
+-STRIP_FROM_PATH      = /home/berni/torcs_src/torcs/torcs/
++STRIP_FROM_PATH      = /home/rudy/debian/torcs/torcs-1.3.2/
+ 
+ # The INTERNAL_DOCS tag determines if documentation
+ # that is typed after a \internal command is included. If the tag is set 
+--- /dev/null
++++ torcs-1.3.2/src/linux/torcs
+@@ -0,0 +1,91 @@
++#! /bin/bash
++# src/linux/torcs.  Generated from torcs.in by configure.
++
++##############################################################################
++#
++#    file                 : torcs.in
++#    created              : Sat Sep 11 20:20:04 CEST 1999
++#    copyright            : (C) 1999 by Eric Espie                         
++#    email                : torcs@free.fr   
++#    version              : $Id: torcs.in,v 1.5.2.2 2011/12/29 10:18:19 berniw Exp $                                  
++#
++##############################################################################
++#
++#   This program is free software; you can redistribute it and/or modify
++#   it under the terms of the GNU General Public License as published by
++#   the Free Software Foundation; either version 2 of the License, or
++#   (at your option) any later version.
++#
++##############################################################################
++
++prefix=/usr/local
++exec_prefix=${prefix}
++
++BINDIR=${exec_prefix}/bin
++LIBDIR=${exec_prefix}/lib/torcs
++DATAROOTDIR=${prefix}/share
++DATADIR=$DATAROOTDIR/games/torcs
++VARDIR=${prefix}/var/games/torcs
++
++LOCAL_CONF=$HOME/.torcs
++
++if [ -d $DATADIR ]
++then
++    if [ ! -d $LOCAL_CONF ]
++    then
++	rm -rf $LOCAL_CONF
++	mkdir -p $LOCAL_CONF
++	echo "$LOCAL_CONF created, copying/linking game data"
++    fi
++    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$LIBDIR/lib
++    cd $DATADIR
++    if [ -f $LIBDIR/setup_linux.sh ]
++    then
++	/bin/bash $LIBDIR/setup_linux.sh $LOCAL_CONF
++	if [ $? -ne 0 ]
++	then
++	    exit 1
++	fi
++    else
++	echo "$LIBDIR/setup_linux.sh file does not exist, check your installation"
++	exit 1
++    fi
++    case $1 in
++	# List the library used
++	-l) shift
++	    ldd $LIBDIR/torcs-bin
++	    ;;
++
++	# Run under GDB
++	-d) shift
++	    gdb  $LIBDIR/torcs-bin <<EOF
++r -l $LOCAL_CONF -L $LIBDIR -D $DATADIR $*
++bt
++EOF
++	    ;;
++
++	-e) shift
++	    echo "cd $DATADIR"
++	    echo "export LD_LIBRARY_PATH=$LIBDIR/lib:$LD_LIBRARY_PATH"
++	    echo "gdb  $LIBDIR/torcs-bin"
++	    echo "r -l $LOCAL_CONF -L $LIBDIR -D $DATADIR $*"
++	    ;;
++
++	-h)
++	    echo "usage: torcs [-l|-d|-e]"
++	    echo "   -l  list the dynamically linked libraries"
++	    echo "   -d  run under gdb and print stack trace on exit"
++	    echo "   -e  display the commands to issue when you want to run under gdb"
++	    ;;
++
++	# Normal run
++	*) $LIBDIR/torcs-bin -l $LOCAL_CONF -L $LIBDIR -D $DATADIR $*
++	    ;;
++
++    esac
++    exit 0
++fi
++
++echo "TORCS location not found"
++	
++	

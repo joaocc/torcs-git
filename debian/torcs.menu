@@ -1,0 +1,4 @@
+?package(torcs):needs="X11" section="Games/Simulation"\
+  title="TORCS" command="/usr/games/torcs" \
+  hints="A racing cars simulator game" \
+  icon="/usr/share/pixmaps/torcs.xpm"
