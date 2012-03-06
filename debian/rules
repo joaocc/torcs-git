@@ -37,3 +37,14 @@ binary-predeb/torcs::
 	rm -f debian/torcs/usr/share/games/torcs/telemetry/telemetry.sh
 # removing shipped Makefiles 
 	find debian/torcs/usr/share/games/torcs -type f -name Makefile | xargs --no-run-if-empty rm -f
+
+# torcs-data-cars packaging bits
+# Fix permissions on data files according policy for games
+binary-predeb/torcs-data-cars::
+       find debian/torcs-data-cars/usr/share/games/torcs -type f | xargs --no-run-if-empty chmod 644
+
+# torcs-data-tracks packaging bits
+binary-predeb/torcs-data-tracks::
+       find debian/torcs-data-tracks/usr/share/games/torcs -type f | xargs --no-run-if-empty chmod 644
+# remove unneeded script
+      rm -f debian/torcs-data-tracks/usr/share/games/torcs/tracks/road/ole-road-1/generate.sh

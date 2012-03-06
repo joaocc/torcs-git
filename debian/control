@@ -10,12 +10,92 @@ Package: torcs
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, torcs-data (>= 1.3.1)
 Description: 3D racing cars simulator game using OpenGL
- TORCS, The Open Racing Car Simulator, is a car racing simulation, which 
- allows you to drive in races against opponents simulated by the computer. 
- You can also develop your own computer-controlled driver (also called a 
+ TORCS, The Open Racing Car Simulator, is a car racing simulation, which
+ allows you to drive in races against opponents simulated by the computer.
+ You can also develop your own computer-controlled driver (also called a
  robot) in C or C++. TORCS is GPL (version 2 or later).
  .
  Hardware requirements are at least 550MHZ CPU, 128MB RAM and 32 MB
- OpenGL 1.3 compatible graphics card (with 3D accel preferred) in order to 
+ OpenGL 1.3 compatible graphics card (with 3D accel preferred) in order to
  fully enjoy the game.
 
+
+Source: torcs
+Section: games
+Priority: extra
+Maintainer: Rudy Godoy <rudy@debian.org>
+Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 7), cdbs
+
+Package: torcs-data
+Architecture: all
+Recommends: torcs (>= 1.3.1)
+Depends:  ${misc:Depends}, torcs-data-tracks (>= 1.3.1), torcs-data-cars (>= 1.3.1)
+Description: base data files for TORCS game
+ TORCS, The Open Racing Car Simulator, is a car racing simulation, which
+ allows you to drive in races against opponents simulated by the computer.
+ .
+ This package includes basic data files for the game. Additionally it includes
+ one car: Ferrari 360 Modena.
+ .
+ Website: http://torcs.org
+
+
+Source: torcs
+Section: games
+Priority: extra
+Maintainer: Rudy Godoy <rudy@debian.org>
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.9.1
+
+Package: torcs-data-cars
+Architecture: all
+Recommends: torcs (>= 1.3.1)
+Depends:  ${misc:Depends}
+Conflicts: torcs-data-cars-extra
+Replaces: torcs-data-cars-extra
+Description: data files for TORCS game - Cars set
+ TORCS, The Open Racing Car Simulator, is a car racing simulation, which
+ allows you to drive in races against opponents simulated by the computer.
+ .
+ This package includes the following cars for the game.
+  - Alfa Romeo 155 (DTM)
+  - Honda Acura NSX SZ
+  - Baja Bug
+  - Buggy
+  - Mercedes CLK (DTM)
+  - Ford GT40
+  - Lotus GT1
+  - McLaren F1
+  - Peugeot 406
+  - Porsche GT1
+  - Porsche GT3RS
+  - Viper GTS-R
+  - Jaguar XJ220
+  - Nascar RWD
+  - Althea X2 GTS
+ .
+ Website: http://torcs.org
+
+
+Source: torcs
+Section: games
+Priority: extra
+Maintainer: Rudy Godoy <rudy@debian.org>
+Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 7), cdbs
+
+Package: torcs-data-tracks
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: torcs (>= 1.3.1)
+Description: data files for torcs game - Tracks set
+ TORCS, The Open Racing Car Simulator, is a car racing simulation, which
+ allows you to drive in races against opponents simulated by the computer.
+ .
+ This package includes the following tracks for the game.
+  - 13 road tracks
+  - 9 oval tracks
+  - 8 dirt tracks
+ .
+ Website: http://torcs.org

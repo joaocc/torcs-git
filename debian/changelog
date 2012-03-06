@@ -8,6 +8,8 @@ torcs (1.3.3-1) unstable; urgency=low
   * Added libvorbis dependency to build-deps
   * Removed dependency on menu. (Closes: #647380)
   * Switched to dpkg-source 3.0 (quilt) format
+  * Merged packaging from -data packages.
+  * Bumped standars version. No changes needed.
 
  -- Rudy Godoy <rudy@stone-head.org>  Thu, 01 Mar 2012 01:51:49 -0500
 
