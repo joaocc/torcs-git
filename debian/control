@@ -20,13 +20,6 @@ Description: 3D racing cars simulator game using OpenGL
  fully enjoy the game.
 
 
-Source: torcs
-Section: games
-Priority: extra
-Maintainer: Rudy Godoy <rudy@debian.org>
-Standards-Version: 3.9.1
-Build-Depends: debhelper (>= 7), cdbs
-
 Package: torcs-data
 Architecture: all
 Recommends: torcs (>= 1.3.1)
@@ -40,13 +33,6 @@ Description: base data files for TORCS game
  .
  Website: http://torcs.org
 
-
-Source: torcs
-Section: games
-Priority: extra
-Maintainer: Rudy Godoy <rudy@debian.org>
-Build-Depends: debhelper (>= 7), cdbs
-Standards-Version: 3.9.1
 
 Package: torcs-data-cars
 Architecture: all
@@ -77,13 +63,6 @@ Description: data files for TORCS game - Cars set
  .
  Website: http://torcs.org
 
-
-Source: torcs
-Section: games
-Priority: extra
-Maintainer: Rudy Godoy <rudy@debian.org>
-Standards-Version: 3.9.1
-Build-Depends: debhelper (>= 7), cdbs
 
 Package: torcs-data-tracks
 Architecture: all
