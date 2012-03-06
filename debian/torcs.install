@@ -1,1 +1,4 @@
+debian/tmp/usr/games /usr/games
+debian/tmp/usr/lib /usr/lib
+debian/tmp/usr/share /usr/share
 debian/torcs.desktop usr/share/applications
