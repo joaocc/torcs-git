@@ -1,2 +1,8 @@
-usr/share/games/torcs/data/ usr/share/games/torcs/data
+usr/share/games/torcs/data usr/share/games/torcs
+usr/share/games/torcs/categories usr/share/games/torcs
+usr/share/games/torcs/config usr/share/games/torcs
+usr/share/games/torcs/drivers usr/share/games/torcs
+usr/share/games/torcs/results usr/share/games/torcs
+usr/share/games/torcs/telemetry usr/share/games/torcs
+usr/share/games/torcs/wheels usr/share/games/torcs
 

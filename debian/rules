@@ -35,7 +35,7 @@ binary-predeb/torcs::
 	find debian/torcs/usr/share/games/torcs -type f -name Makefile | xargs --no-run-if-empty rm -f
 
 build/torcs-data::
-	$(MAKE) datainstall
+	$(MAKE) datainstall DESTDIR=$(CURDIR)/debian/tmp
 
 # torcs-data-cars packaging bits
 # Fix permissions on data files according policy for games
