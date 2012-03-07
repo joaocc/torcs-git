@@ -17,7 +17,6 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/autotools.mk
 
 DEB_CONFIGURE_EXTRA_FLAGS := --bindir=\$${prefix}/games --x-libraries=/usr/lib/
-DEB_MAKE_INSTALL_TARGET_torcs-data := datainstall DESTDIR=$(CURDIR)/debian/tmp
 
 # Nasty hack to get this target call configure script before compile
 # the code. This should be improved/removed/cleaned, see TODO.Debian
@@ -34,6 +33,9 @@ binary-predeb/torcs::
 	rm -f debian/torcs/usr/share/games/torcs/telemetry/telemetry.sh
 # removing shipped Makefiles 
 	find debian/torcs/usr/share/games/torcs -type f -name Makefile | xargs --no-run-if-empty rm -f
+
+build/torcs-data::
+	$(MAKE) datainstall
 
 # torcs-data-cars packaging bits
 # Fix permissions on data files according policy for games
