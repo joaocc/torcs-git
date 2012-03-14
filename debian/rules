@@ -33,6 +33,8 @@ binary-predeb/torcs::
 	rm -f debian/torcs/usr/share/games/torcs/telemetry/telemetry.sh
 # removing shipped Makefiles 
 	find debian/torcs/usr/share/games/torcs -type f -name Makefile | xargs --no-run-if-empty rm -f
+# stripped installed files that go into -data packages.
+	rm -rf debian/torcs/usr/share/games/torcs
 
 build/torcs-data::
 	$(MAKE) datainstall DESTDIR=$(CURDIR)/debian/tmp
