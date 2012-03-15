@@ -29,8 +29,6 @@ cleanbuilddir/torcs::
 	rm -f $(CURDIR)/debian/stamp*
 
 binary-predeb/torcs::
-# removing empty script until it's ready
-	rm -f debian/torcs/usr/share/games/torcs/telemetry/telemetry.sh
 # removing shipped Makefiles 
 	find debian/torcs/usr/share/games/torcs -type f -name Makefile | xargs --no-run-if-empty rm -f
 # stripped installed files that go into -data packages.
@@ -38,6 +36,10 @@ binary-predeb/torcs::
 
 build/torcs-data::
 	$(MAKE) datainstall DESTDIR=$(CURDIR)/debian/tmp
+
+build-predeb/torcs-data::
+# removing empty script until it's ready
+	rm -f debian/torcs/usr/share/games/torcs/telemetry/telemetry.sh
 
 # torcs-data-cars packaging bits
 # Fix permissions on data files according policy for games
