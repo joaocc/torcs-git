@@ -6,3 +6,4 @@ usr/games/trackgen usr/games
 usr/lib usr
 usr/share usr
 debian/torcs.desktop usr/share/applications
+torcs.xpm usr/share/pixmaps
