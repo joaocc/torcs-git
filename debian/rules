@@ -39,7 +39,7 @@ build/torcs-data::
 
 build-predeb/torcs-data::
 # removing empty script until it's ready
-	rm -f debian/torcs/usr/share/games/torcs/telemetry/telemetry.sh
+	rm -f debian/torcs-data/usr/share/games/torcs/telemetry/telemetry.sh
 
 # torcs-data-cars packaging bits
 # Fix permissions on data files according policy for games
