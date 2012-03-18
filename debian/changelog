@@ -1,10 +1,13 @@
 torcs (1.3.3-2) unstable; urgency=low
 
-  * torcs-data: Fixed dependency relationships to allow clean upgrade.
-    (Closes #664220)
+  * torcs-data: Fixed dependency relationships to allow clean upgrade
+    from previous versions. (Closes: #664220)
   * Updated watch and README.Debian-source to reflect use of upstream's 
     "all-in-one" source tarball instead of the split ones.
-  * Put back Art licensing for game artwork to debian/copyright.
+  * Put back Art licensing to .copyright files for -data, -data-tracks 
+    and -data-cars.
+  * Package is in better shape now and includes security fixes. 
+    (Closes: #660516, #660555)
 
  -- Rudy Godoy <rudy@stone-head.org>  Sat, 17 Mar 2012 21:51:12 -0500
 
