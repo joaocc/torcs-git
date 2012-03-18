@@ -1,0 +1,32 @@
+This package was debianized by Rudy Godoy <rudy@kernel-panik.org> on
+Thu, 26 Feb 2004 21:19:34 -0500.
+
+The current Debian maintainer is Rudy Godoy <rudy@stone-head.org>
+
+It was downloaded from http://torcs.sourceforge.net/
+
+Upstream Authors: Eric Espié <eric.espie@free.fr> 
+                  Christophe Guionneau <Christophe.Guionneau@fnac.net>
+
+Copyright:	  2000 - Eric Espié
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License with
+the Debian GNU/Linux distribution in file /usr/share/common-licenses/GPL-2;
+if not, write to the Free Software Foundation, Inc., 51 Franklin St, 
+Fifth Floor, Boston, MA 02110-1301, USA.
+
+On Debian systems, the complete text of the GNU General Public
+License, version 2, can be found in /usr/share/common-licenses/GPL-2.
+
+The Debian packaging is (C) 2004, Rudy Godoy Guillén <rudy@stone-head.org> and
+is licensed under the GPL, see above.
+
