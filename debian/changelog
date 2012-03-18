@@ -1,3 +1,10 @@
+torcs (1.3.3-2) unstable; urgency=low
+
+  * torcs-data: Fixed dependency relationships to allow clean upgrade.
+    (Closes #664220)
+
+ -- Rudy Godoy <rudy@stone-head.org>  Sat, 17 Mar 2012 19:14:39 -0500
+
 torcs (1.3.3-1) unstable; urgency=low
 
   * New upstream release
