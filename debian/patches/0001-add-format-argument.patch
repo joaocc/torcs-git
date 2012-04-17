@@ -1,0 +1,21 @@
+From: Rudy Godoy <rudy@stone-head.org>
+Date: Mon, 16 Apr 2012 20:26:21 -0500
+Subject: add-format-argument
+
+---
+ src/tools/texmapper/maintexmapper.cpp |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/tools/texmapper/maintexmapper.cpp b/src/tools/texmapper/maintexmapper.cpp
+index c501792..fbfff34 100644
+--- a/src/tools/texmapper/maintexmapper.cpp
++++ b/src/tools/texmapper/maintexmapper.cpp
+@@ -103,7 +103,7 @@ void print_mat4(char *title, sgMat4 m)
+ {
+     int		i, j;
+ 
+-    printf(title);
++    printf("%s", title);
+     for (j = 0; j < 4; j ++){
+ 	for (i = 0; i < 4; i ++) {
+ 	    printf("%.6f  ", m[i][j]);

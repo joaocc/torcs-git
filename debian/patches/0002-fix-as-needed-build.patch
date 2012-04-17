@@ -1,0 +1,23 @@
+From: Rudy Godoy <rudy@stone-head.org>
+Date: Mon, 16 Apr 2012 20:26:21 -0500
+Subject: fix-as-needed-build
+
+---
+ src/libs/raceengineclient/Makefile |    4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/libs/raceengineclient/Makefile b/src/libs/raceengineclient/Makefile
+index 7f20f20..6b3aa36 100644
+--- a/src/libs/raceengineclient/Makefile
++++ b/src/libs/raceengineclient/Makefile
+@@ -23,6 +23,10 @@ SOLIBDIR     = .
+ SOURCES      = singleplayer.cpp raceinit.cpp racemain.cpp racemanmenu.cpp racestate.cpp racegl.cpp \
+ 	       raceengine.cpp raceresults.cpp
+ 
++LIBSPATH     = -L${EXPORTBASE}
++
++LIBS         = -lracescreens -lrobottools
++
+ EXPDIR       = include
+ 
+ EXPORTS      = singleplayer.h raceinit.h
