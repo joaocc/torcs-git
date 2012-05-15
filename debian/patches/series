@@ -1,4 +1,3 @@
 0001-add-format-argument.patch
 0002-fix-as-needed-build.patch
 0003-Fixes-package-building-for-Ubuntu.patch
-0004-Added-LT_INIT-to-configure.in.patch
