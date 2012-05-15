@@ -26,6 +26,8 @@ debian/stamp-makefile-build:
 	touch debian/stamp-makefile-build
 
 cleanbuilddir/torcs::
+# remove VCS files present in source
+	find $(CURDIR) -type d -name "CVS" | xargs rm -f
 	rm -f $(CURDIR)/debian/stamp*
 
 binary-predeb/torcs::
