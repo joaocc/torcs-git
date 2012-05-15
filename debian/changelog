@@ -1,4 +1,4 @@
-torcs (1.3.3-4) UNRELEASED; urgency=low
+torcs (1.3.3-4) unstable; urgency=low
 
   * Fixed wording on package description.
   * Finally, fixes upgrading errors due new packaging layout. (Closes: #664220)
