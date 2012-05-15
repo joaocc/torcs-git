@@ -21,10 +21,10 @@ DEB_CONFIGURE_EXTRA_FLAGS := --bindir=\$${prefix}/games --x-libraries=/usr/lib/
 
 # Nasty hack to get this target call configure script before compile
 # the code. This should be improved/removed/cleaned, see TODO.Debian
-debian/stamp-makefile-build:
-	$(DEB_CONFIGURE_INVOKE) $(cdbs_configure_flags) $(DEB_CONFIGURE_EXTRA_FLAGS) $(DEB_CONFIGURE_USER_FLAGS)
-	$(DEB_MAKE_INVOKE) $(DEB_MAKE_BUILD_TARGET)
-	touch debian/stamp-makefile-build
+#debian/stamp-makefile-build:
+#	$(DEB_CONFIGURE_INVOKE) $(cdbs_configure_flags) $(DEB_CONFIGURE_EXTRA_FLAGS) $(DEB_CONFIGURE_USER_FLAGS)
+#	$(DEB_MAKE_INVOKE) $(DEB_MAKE_BUILD_TARGET)
+#	touch debian/stamp-makefile-build
 
 cleanbuilddir/torcs::
 # remove VCS files present in source
