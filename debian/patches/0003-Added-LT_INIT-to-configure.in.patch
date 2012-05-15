@@ -1,19 +1,10 @@
 From: Rudy Godoy <rudy@stone-head.org>
-Date: Tue, 15 May 2012 15:51:59 -0500
+Date: Tue, 15 May 2012 15:58:05 -0500
 Subject: Added LT_INIT to configure.in
 
-Title: Added LT_INIT to configure.in
-DEP: 3
-Date: 2012-05-15
-Drivers: Rudy Godoy <rudy@stone-head.org>
-Abstract:
- Added LT_INIT macro to configure for better libtool support.
 ---
- configure.in                                       |    1 +
- .../0003-Fixes-package-building-for-Ubuntu.patch   |   23 --------------------
- debian/patches/series                              |    1 -
- 3 files changed, 1 insertion(+), 24 deletions(-)
- delete mode 100644 debian/patches/0003-Fixes-package-building-for-Ubuntu.patch
+ configure.in |    1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/configure.in b/configure.in
 index be4c7d4..e1cece5 100644
@@ -27,40 +18,3 @@ index be4c7d4..e1cece5 100644
  AC_INIT(Make-config.in)
  AC_CONFIG_HEADERS(config.h)
  AM_INIT_AUTOMAKE(torcs, 1.3.3)
-diff --git a/debian/patches/0003-Fixes-package-building-for-Ubuntu.patch b/debian/patches/0003-Fixes-package-building-for-Ubuntu.patch
-deleted file mode 100644
-index 13a7561..0000000
---- a/debian/patches/0003-Fixes-package-building-for-Ubuntu.patch
-+++ /dev/null
-@@ -1,23 +0,0 @@
--From: Rudy Godoy <rudy@stone-head.org>
--Date: Mon, 16 Apr 2012 20:28:24 -0500
--Subject: =?UTF-8?q?Fixes=20package=20building=20for=20Ubuntu.=0AThe=20patch=20?=
-- =?UTF-8?q?adds=20-lopenal=20to=20$LDFLAGS.=20This=20fixes=20a=20building=20?=
-- =?UTF-8?q?issue=20in=20Ubuntu.?=
--
-----
-- configure.in |    2 +-
-- 1 file changed, 1 insertion(+), 1 deletion(-)
--
--diff --git a/configure.in b/configure.in
--index 585989c..acbebff 100644
----- a/configure.in
--+++ b/configure.in
--@@ -125,7 +125,7 @@ AC_CHECK_LIB(Xmu, XmuSimpleErrorHandler,,AC_MSG_ERROR([Can't find libXmu. Please
-- AC_CHECK_LIB(Xxf86vm, XF86VidModeSetViewPort,,AC_MSG_ERROR([Can't find libXxf86vm. Please check config.log and if you can't solve the problem send the file to torcs-users@lists.sourceforge.net with the subject \"torcs compilation problem\"]))
-- AC_CHECK_LIB(Xrender, XRenderSetSubpixelOrder,,AC_MSG_ERROR([Can't find libXrender. Please check config.log and if you can't solve the problem send the file to torcs-users@lists.sourceforge.net with the subject \"torcs compilation problem\"]))
-- AC_CHECK_LIB(Xrandr, XRRQueryVersion,,AC_MSG_ERROR([Can't find libXrandr. Please check config.log and if you can't solve the problem send the file to torcs-users@lists.sourceforge.net with the subject \"torcs compilation problem\"]))
---AC_CHECK_LIB(openal, alEnable,, AC_MSG_ERROR([Can't find AL/al.h. OpenAL can be found on http://www.openal.org/]))
--+AC_CHECK_LIB(openal, alEnable, LDFLAGS="$LDFLAGS -lopenal", AC_MSG_ERROR([Can't find AL/al.h. OpenAL can be found on http://www.openal.org/]))
-- AC_CHECK_LIB(alut, alutLoadWAVFile,
-- 	LDFLAGS="$LDFLAGS -lalut",
-- 	LDFLAGS="$LDFLAGS")
-diff --git a/debian/patches/series b/debian/patches/series
-index a99a90a..78f059c 100644
---- a/debian/patches/series
-+++ b/debian/patches/series
-@@ -1,3 +1,2 @@
- 0001-add-format-argument.patch
- 0002-fix-as-needed-build.patch
--0003-Fixes-package-building-for-Ubuntu.patch
