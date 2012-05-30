@@ -12,14 +12,15 @@ Package: torcs
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}, torcs-data (>= 1.3.3)
 Description: 3D racing cars simulator game using OpenGL
- TORCS, The Open Racing Car Simulator is a car racing simulation which
- allows you to drive in races against opponents simulated by the computer.
+ TORCS, The Open Racing Car Simulator is a car racing simulation game 
+ which allows you to drive in races against opponents simulated by 
+ the computer.
  You can also develop your own computer-controlled driver (also called a
  robot) in C or C++. TORCS is GPL (version 2 or later).
  .
  Hardware requirements are at least 550MHZ CPU, 256MB RAM and 32 MB
- OpenGL 1.3 compatible graphics card (with 3D accel preferred) in order to
- fully enjoy the game.
+ OpenGL 1.3 compatible graphics card (with 3D accel preferred) in order 
+ to fully enjoy the game.
 
 
 Package: torcs-data
@@ -29,13 +30,13 @@ Depends:  ${misc:Depends}, torcs-data-tracks (>= 1.3.3), torcs-data-cars (>= 1.3
 Replaces: torcs-data-cars (<< 1.3.3), torcs (<< 1.3.3)
 Breaks: torcs (<< 1.3.3)
 Description: base data files for TORCS game
- TORCS, The Open Racing Car Simulator is a car racing simulation which
- allows you to drive in races against opponents simulated by the computer.
+ TORCS, The Open Racing Car Simulator is a car racing simulation game 
+ which allows you to drive in races against opponents simulated by 
+ the computer.
  .
- This package includes basic data files for the game. Additionally it includes
- one car: Ferrari 360 Modena.
- .
- Website: http://torcs.org
+ This package includes basic data files for the game plus one car:
+ Ferrari 360 Modena. For additional cars and tracks install the 
+ torcs-data-tracks and torcs-data-cars packages.
 
 
 Package: torcs-data-cars
@@ -46,8 +47,9 @@ Conflicts: torcs-data-cars-extra
 Replaces: torcs-data-cars-extra (<< 1.3.3), torcs-data (<< 1.3.3)
 Breaks: torcs-data (<< 1.3.3)
 Description: data files for TORCS game - Cars set
- TORCS, The Open Racing Car Simulator is a car racing simulation which
- allows you to drive in races against opponents simulated by the computer.
+ TORCS, The Open Racing Car Simulator is a car racing simulation game 
+ which allows you to drive in races against opponents simulated by 
+ the computer.
  .
  This package includes the following cars for the game.
   - Alfa Romeo 155 (DTM)
@@ -65,8 +67,6 @@ Description: data files for TORCS game - Cars set
   - Jaguar XJ220
   - Nascar RWD
   - Althea X2 GTS
- .
- Website: http://torcs.org
 
 
 Package: torcs-data-tracks
@@ -75,12 +75,12 @@ Depends: ${misc:Depends}
 Recommends: torcs (>= 1.3.3)
 Replaces: torcs-data-tracks (<< 1.3.3)
 Description: data files for TORCS game - Tracks set
- TORCS, The Open Racing Car Simulator is a car racing simulation which
- allows you to drive in races against opponents simulated by the computer.
+ TORCS, The Open Racing Car Simulator is a car racing simulation game 
+ which allows you to drive in races against opponents simulated by 
+ the computer.
  .
  This package includes the following tracks for the game.
   - 13 road tracks
   - 9 oval tracks
   - 8 dirt tracks
- .
- Website: http://torcs.org
+
