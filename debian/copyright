@@ -25,8 +25,37 @@ License: GPL-2
  On Debian systems, the complete text of the GNU General Public
  License, version 2, can be found in /usr/share/common-licenses/GPL-2.
 
+Files: data/cars/models/155-DTM/*
+Copyright: 2000, Andrea Alfieri <alfiogt@libero.it>
+License: public-domain
+
+Files: data/cars/models/acura-nsx-sz/*
+Copyright: 2002, Jean-Christophe Durieu
+           2000, ViPeR <viper@mttestdriver.com>
+License: FreeArtLicense
+ This is a free work, you can copy, distribute, 
+ and modify it under the terms of the Free Art License
+ .
+ http://artlibre.org/licence/lal/en/
+
+Files: data/cars/models/baja-bug/*
+Copyright: 200, Jean-Christophe Durieu
+License: FreeArtLicense
+ This is a free work, you can copy, distribute, 
+ and modify it under the terms of the Free Art License
+ .
+ http://artlibre.org/licence/lal/en/
+
+Files: data/cars/models/car1-ow1
+Copyright: 2004, SpeedyChonChon
+License: FreeArtLicense
+ This is a free work, you can copy, distribute, 
+ and modify it under the terms of the Free Art License
+ .
+ http://artlibre.org/licence/lal/en/
+
 Files: debian/*
-Copyright: Copyright (C) 2004, Rudy Godoy Guillén <rudy@stone-head.org>
+Copyright: 2004, Rudy Godoy Guillén <rudy@stone-head.org>
 License: GPL-2+
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -44,5 +73,3 @@ License: GPL-2+
  .
  On Debian systems, the complete text of the GNU General Public
  License, version 2, can be found in /usr/share/common-licenses/GPL-2.
-
-

@@ -53,21 +53,36 @@ Description: data files for TORCS game - Cars set
  .
  This package includes the following cars for the game.
   - Alfa Romeo 155 (DTM)
-  - Honda Acura NSX SZ
+  - Acura NSX type S-Zero
   - Baja Bug
   - Buggy
-  - Mercedes CLK (DTM)
-  - Ford GT40
-  - Lotus GT1
-  - McLaren F1
+  - Toyota 2000 GT
+  - Bizzarrini 5300 GT
+  - Alpine A110
+  - Alfa Romeo TZ2
+  - Austin-Healey 3000 Mk II
+  - AC Cobra 427
+  - Cobra Daytona Shelby
+  - Opel GT Conrero
+  - Corvette T-Top
+  - Ferrari 365 Gtb4 Daytona
+  - Aston Martin DB4 GT Zagato
+  - Aston Martin DBS
+  - Ferrari Dino 246 GT
+  - Maserati Ghibli
+  - Alfa Romeo Giulietta spider
+  - Iso Grifo
+  - Ford Gt40
+  - Ferrari 250 GTO
+  - Ferrari 330 P4
   - Peugeot 406
-  - Porsche GT1
-  - Porsche GT3RS
-  - Viper GTS-R
-  - Jaguar XJ220
-  - Nascar RWD
-  - Althea X2 GTS
-
+  - Peugeot 206 WRC
+  - Peugeot 306 Maxi
+  - Toyota Corolla WRC
+  - Mitsubishi Lancer EVO VI WRC
+  - Ford Focus WRC
+  - Subaru Impreza WRC
+  - and More!
 
 Package: torcs-data-tracks
 Architecture: all
