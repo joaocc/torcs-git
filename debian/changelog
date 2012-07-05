@@ -1,7 +1,7 @@
 torcs (1.3.3-6) unstable; urgency=low
 
   * Resolved Lintian warnings
-    - debian/copyright: public-domain license.
+    - debian/copyright: Licensing for 155-DTM is GPL, according sources.
     - debian/rules: Empty script in torcs-data.
 
  -- Rudy Godoy <rudy@stone-head.org>  Wed, 04 Jul 2012 22:26:21 -0500
