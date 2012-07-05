@@ -1,8 +1,15 @@
+torcs (1.3.3-6) unstable; urgency=low
+
+  * Resolved Lintian warnings.
+
+ -- Rudy Godoy <rudy@stone-head.org>  Wed, 04 Jul 2012 22:26:21 -0500
+
 torcs (1.3.3-5) unstable; urgency=low
 
   * Reworked debian/copyright to conform machine readable policy.
   * Added artwork licensing for cars (-data-cars).
-  * Updated car list shipped within the torcs-data-cars package. (Closes: #678827)
+  * Updated car list shipped within the torcs-data-cars package. 
+    (Closes: #678827)
   * Removed empty script (telemetry.sh) from torcs to make lintian happy.
   * Reworded -data* packages description to be more descriptive and clear.
   * Removed 'Website' pseudo-field since the package has Homepage field set.

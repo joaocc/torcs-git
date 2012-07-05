@@ -42,7 +42,7 @@ binary-predeb/torcs::
 build/torcs-data::
 	$(MAKE) datainstall DESTDIR=$(CURDIR)/debian/tmp
 
-build-predeb/torcs-data::
+binary-predeb/torcs-data::
 # removing empty script until it's ready
 	rm -f debian/torcs-data/usr/share/games/torcs/telemetry/telemetry.sh
 
